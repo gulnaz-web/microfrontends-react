@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/invoices/invoices.css';
+import * as Styled from './styled/Invoices';
 
 const Invoices: React.FC = () => {
    return (
@@ -9,15 +9,15 @@ const Invoices: React.FC = () => {
             <button className="btn">Создать счет</button>
          </div>
 
-         <div className="invoices-tabs">
-            <button className="invoice-tab active">Все счета</button>
-            <button className="invoice-tab">Ожидающие оплаты</button>
-            <button className="invoice-tab">Оплаченные</button>
-            <button className="invoice-tab">Просроченные</button>
-         </div>
+         <Styled.InvoicesTabs>
+            <Styled.InvoiceTab className="active">Все счета</Styled.InvoiceTab>
+            <Styled.InvoiceTab>Ожидающие оплаты</Styled.InvoiceTab>
+            <Styled.InvoiceTab>Оплаченные</Styled.InvoiceTab>
+            <Styled.InvoiceTab>Просроченные</Styled.InvoiceTab>
+         </Styled.InvoicesTabs>
 
          <div className="invoices-list">
-            <table className="invoices-table">
+            <Styled.InvoicesTable>
                <thead>
                   <tr>
                      <th>№ счета</th>
@@ -46,8 +46,8 @@ const Invoices: React.FC = () => {
                            <td>15.04.2023</td>
                            <td>{index % 3 === 0 ? '01.05.2023' : '15.05.2023'}</td>
                            <td>
-                              <span
-                                 className={`status-badge ${
+                              <Styled.InvoiceStatus
+                                 className={`${
                                     index % 3 === 0
                                        ? 'status-danger'
                                        : index % 3 === 1
@@ -59,11 +59,11 @@ const Invoices: React.FC = () => {
                                     : index % 3 === 1
                                     ? 'Ожидает оплаты'
                                     : 'Оплачен'}
-                              </span>
+                              </Styled.InvoiceStatus>
                            </td>
                            <td>
-                              <div className="invoice-actions">
-                                 <button className="action-btn" title="Скачать PDF">
+                              <Styled.InvoiceActions>
+                                 <Styled.ActionButton title="Скачать PDF">
                                     <svg
                                        width="18"
                                        height="18"
@@ -75,8 +75,8 @@ const Invoices: React.FC = () => {
                                           fill="currentColor"
                                        />
                                     </svg>
-                                 </button>
-                                 <button className="action-btn" title="Отправить по email">
+                                 </Styled.ActionButton>
+                                 <Styled.ActionButton title="Отправить по email">
                                     <svg
                                        width="18"
                                        height="18"
@@ -88,9 +88,9 @@ const Invoices: React.FC = () => {
                                           fill="currentColor"
                                        />
                                     </svg>
-                                 </button>
+                                 </Styled.ActionButton>
                                  {index % 3 !== 2 && (
-                                    <button className="action-btn pay-btn" title="Оплатить">
+                                    <Styled.ActionButton className="pay-btn" title="Оплатить">
                                        <svg
                                           width="18"
                                           height="18"
@@ -102,14 +102,14 @@ const Invoices: React.FC = () => {
                                              fill="currentColor"
                                           />
                                        </svg>
-                                    </button>
+                                    </Styled.ActionButton>
                                  )}
-                              </div>
+                              </Styled.InvoiceActions>
                            </td>
                         </tr>
                      ))}
                </tbody>
-            </table>
+            </Styled.InvoicesTable>
          </div>
 
          <div className="pagination">

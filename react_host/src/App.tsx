@@ -5,7 +5,6 @@ import Header from './components/Header';
 import AppRoutes from './AppRoutes';
 import theme from './styled-components/theme';
 import GlobalStyles from './styled-components/GlobalStyles';
-import './styles/global.css';
 
 function App() {
    return (

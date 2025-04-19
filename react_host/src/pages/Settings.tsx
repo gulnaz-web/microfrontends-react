@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/settings/settings.css';
+import * as Styled from './styled/Settings';
 
 const Settings: React.FC = () => {
    return (
@@ -9,21 +9,21 @@ const Settings: React.FC = () => {
             <button className="btn btn-secondary">Сохранить изменения</button>
          </div>
 
-         <div className="settings-layout">
-            <div className="settings-sidebar">
-               <div className="settings-nav">
-                  <button className="settings-nav-item active">Профиль</button>
-                  <button className="settings-nav-item">Безопасность</button>
-                  <button className="settings-nav-item">Уведомления</button>
-                  <button className="settings-nav-item">Предпочтения</button>
-                  <button className="settings-nav-item">Интеграции</button>
-               </div>
-            </div>
+         <Styled.SettingsLayout>
+            <Styled.SettingsSidebar>
+               <Styled.SettingsNav>
+                  <Styled.SettingsNavItemActive>Профиль</Styled.SettingsNavItemActive>
+                  <Styled.SettingsNavItem>Безопасность</Styled.SettingsNavItem>
+                  <Styled.SettingsNavItem>Уведомления</Styled.SettingsNavItem>
+                  <Styled.SettingsNavItem>Предпочтения</Styled.SettingsNavItem>
+                  <Styled.SettingsNavItem>Интеграции</Styled.SettingsNavItem>
+               </Styled.SettingsNav>
+            </Styled.SettingsSidebar>
 
-            <div className="settings-content">
+            <Styled.SettingsContent>
                <div className="profile-settings">
-                  <div className="profile-header">
-                     <div className="profile-avatar-large">
+                  <Styled.ProfileHeader>
+                     <Styled.ProfileAvatarLarge>
                         <svg
                            width="80"
                            height="80"
@@ -35,88 +35,79 @@ const Settings: React.FC = () => {
                               fill="#FFB930"
                            />
                         </svg>
-                        <button className="change-avatar-btn">Изменить</button>
-                     </div>
+                        <Styled.ChangeAvatarBtn>Изменить</Styled.ChangeAvatarBtn>
+                     </Styled.ProfileAvatarLarge>
 
-                     <div className="profile-details">
+                     <Styled.ProfileDetails>
                         <h3>Andrew</h3>
-                        <p className="user-status">Администратор</p>
-                        <p className="user-since">Пользователь с 10.03.2020</p>
-                     </div>
-                  </div>
+                        <Styled.UserStatus>Администратор</Styled.UserStatus>
+                        <Styled.UserSince>Пользователь с 10.03.2020</Styled.UserSince>
+                     </Styled.ProfileDetails>
+                  </Styled.ProfileHeader>
 
-                  <div className="settings-form">
-                     <div className="form-row">
-                        <div className="form-group">
-                           <label>Имя</label>
-                           <input type="text" className="form-control" defaultValue="Andrew" />
-                        </div>
-                        <div className="form-group">
-                           <label>Фамилия</label>
-                           <input type="text" className="form-control" defaultValue="Smith" />
-                        </div>
-                     </div>
+                  <Styled.SettingsForm>
+                     <Styled.FormRow>
+                        <Styled.FormGroup>
+                           <Styled.FormLabel>Имя</Styled.FormLabel>
+                           <Styled.FormControl type="text" defaultValue="Andrew" />
+                        </Styled.FormGroup>
+                        <Styled.FormGroup>
+                           <Styled.FormLabel>Фамилия</Styled.FormLabel>
+                           <Styled.FormControl type="text" defaultValue="Smith" />
+                        </Styled.FormGroup>
+                     </Styled.FormRow>
 
-                     <div className="form-row">
-                        <div className="form-group">
-                           <label>Email</label>
-                           <input
-                              type="email"
-                              className="form-control"
-                              defaultValue="andrew@example.com"
-                           />
-                        </div>
-                        <div className="form-group">
-                           <label>Телефон</label>
-                           <input
-                              type="tel"
-                              className="form-control"
-                              defaultValue="+7 (900) 123-45-67"
-                           />
-                        </div>
-                     </div>
+                     <Styled.FormRow>
+                        <Styled.FormGroup>
+                           <Styled.FormLabel>Email</Styled.FormLabel>
+                           <Styled.FormControl type="email" defaultValue="andrew@example.com" />
+                        </Styled.FormGroup>
+                        <Styled.FormGroup>
+                           <Styled.FormLabel>Телефон</Styled.FormLabel>
+                           <Styled.FormControl type="tel" defaultValue="+7 (900) 123-45-67" />
+                        </Styled.FormGroup>
+                     </Styled.FormRow>
 
-                     <div className="form-group">
-                        <label>Адрес</label>
-                        <input
+                     <Styled.FormGroup>
+                        <Styled.FormLabel>Адрес</Styled.FormLabel>
+                        <Styled.FormControl
                            type="text"
-                           className="form-control"
                            defaultValue="Москва, ул. Примерная, д. 123"
                         />
-                     </div>
+                     </Styled.FormGroup>
 
-                     <div className="form-row">
-                        <div className="form-group">
-                           <label>Город</label>
-                           <input type="text" className="form-control" defaultValue="Москва" />
-                        </div>
-                        <div className="form-group">
-                           <label>Почтовый индекс</label>
-                           <input type="text" className="form-control" defaultValue="123456" />
-                        </div>
-                     </div>
+                     <Styled.FormRow>
+                        <Styled.FormGroup>
+                           <Styled.FormLabel>Город</Styled.FormLabel>
+                           <Styled.FormControl type="text" defaultValue="Москва" />
+                        </Styled.FormGroup>
+                        <Styled.FormGroup>
+                           <Styled.FormLabel>Почтовый индекс</Styled.FormLabel>
+                           <Styled.FormControl type="text" defaultValue="123456" />
+                        </Styled.FormGroup>
+                     </Styled.FormRow>
 
-                     <div className="form-group">
-                        <label>Язык интерфейса</label>
-                        <select className="form-control">
+                     <Styled.FormGroup>
+                        <Styled.FormLabel>Язык интерфейса</Styled.FormLabel>
+                        <Styled.FormSelect>
                            <option value="ru">Русский</option>
                            <option value="en">English</option>
                            <option value="de">Deutsch</option>
-                        </select>
-                     </div>
+                        </Styled.FormSelect>
+                     </Styled.FormGroup>
 
-                     <div className="form-group">
-                        <label>Валюта по умолчанию</label>
-                        <select className="form-control">
+                     <Styled.FormGroup>
+                        <Styled.FormLabel>Валюта по умолчанию</Styled.FormLabel>
+                        <Styled.FormSelect>
                            <option value="RUB">Российский рубль (₽)</option>
                            <option value="USD">Доллар США ($)</option>
                            <option value="EUR">Евро (€)</option>
-                        </select>
-                     </div>
-                  </div>
+                        </Styled.FormSelect>
+                     </Styled.FormGroup>
+                  </Styled.SettingsForm>
                </div>
-            </div>
-         </div>
+            </Styled.SettingsContent>
+         </Styled.SettingsLayout>
       </div>
    );
 };

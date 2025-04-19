@@ -27,14 +27,7 @@ const GlobalStyles = createGlobalStyle`
     gap: 20px;
   }
   
-  /* РАЗОБРАТЬ 👇 */
 
-
-  @media (max-width: 768px) {
-    .section-row {
-      flex-direction: column;
-    }
-  }
 
   /* контейнер */
   .container {

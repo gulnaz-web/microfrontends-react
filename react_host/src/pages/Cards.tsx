@@ -1,6 +1,6 @@
 import React from 'react';
 import CardSection from '../components/CardSection';
-import '../styles/cards/cards.css';
+import * as Styled from './styled/Cards';
 
 const Cards: React.FC = () => {
    return (
@@ -14,18 +14,20 @@ const Cards: React.FC = () => {
             </div>
 
             <div className="cards-management">
-               <div className="card-management-tabs">
-                  <button className="card-tab active">Активные карты</button>
-                  <button className="card-tab">История операций</button>
-                  <button className="card-tab">Настройки безопасности</button>
-               </div>
+               <Styled.CardManagementTabs>
+                  <Styled.CardTabActive>Активные карты</Styled.CardTabActive>
+                  <Styled.CardTab>История операций</Styled.CardTab>
+                  <Styled.CardTab>Настройки безопасности</Styled.CardTab>
+               </Styled.CardManagementTabs>
 
-               <div className="card-settings">
-                  <div className="settings-group">
+               <Styled.CardSettings>
+                  <Styled.CardSettingsGroup>
                      <h3>Лимиты карты</h3>
-                     <div className="settings-item">
-                        <label>Дневной лимит снятия наличных</label>
-                        <div className="setting-control">
+                     <Styled.CardSettingsItem>
+                        <Styled.CardSettingsLabel>
+                           Дневной лимит снятия наличных
+                        </Styled.CardSettingsLabel>
+                        <Styled.CardSettingsControl>
                            <input
                               type="range"
                               min="0"
@@ -34,11 +36,11 @@ const Cards: React.FC = () => {
                               defaultValue="50000"
                            />
                            <span>₽50,000</span>
-                        </div>
-                     </div>
-                     <div className="settings-item">
-                        <label>Лимит онлайн-платежей</label>
-                        <div className="setting-control">
+                        </Styled.CardSettingsControl>
+                     </Styled.CardSettingsItem>
+                     <Styled.CardSettingsItem>
+                        <Styled.CardSettingsLabel>Лимит онлайн-платежей</Styled.CardSettingsLabel>
+                        <Styled.CardSettingsControl>
                            <input
                               type="range"
                               min="0"
@@ -47,35 +49,39 @@ const Cards: React.FC = () => {
                               defaultValue="100000"
                            />
                            <span>₽100,000</span>
-                        </div>
-                     </div>
-                  </div>
+                        </Styled.CardSettingsControl>
+                     </Styled.CardSettingsItem>
+                  </Styled.CardSettingsGroup>
 
-                  <div className="settings-group">
+                  <Styled.CardSettingsGroup>
                      <h3>Безопасность</h3>
-                     <div className="settings-option">
-                        <label className="toggle-control">
+                     <Styled.CardToggleOption>
+                        <Styled.CardToggleControl>
                            <input type="checkbox" defaultChecked />
-                           <span className="toggle-switch"></span>
-                           <span className="toggle-label">Разрешить бесконтактные платежи</span>
-                        </label>
-                     </div>
-                     <div className="settings-option">
-                        <label className="toggle-control">
+                           <Styled.CardToggleSwitch></Styled.CardToggleSwitch>
+                           <Styled.CardToggleLabel>
+                              Разрешить бесконтактные платежи
+                           </Styled.CardToggleLabel>
+                        </Styled.CardToggleControl>
+                     </Styled.CardToggleOption>
+                     <Styled.CardToggleOption>
+                        <Styled.CardToggleControl>
                            <input type="checkbox" defaultChecked />
-                           <span className="toggle-switch"></span>
-                           <span className="toggle-label">Разрешить онлайн-платежи</span>
-                        </label>
-                     </div>
-                     <div className="settings-option">
-                        <label className="toggle-control">
+                           <Styled.CardToggleSwitch></Styled.CardToggleSwitch>
+                           <Styled.CardToggleLabel>Разрешить онлайн-платежи</Styled.CardToggleLabel>
+                        </Styled.CardToggleControl>
+                     </Styled.CardToggleOption>
+                     <Styled.CardToggleOption>
+                        <Styled.CardToggleControl>
                            <input type="checkbox" />
-                           <span className="toggle-switch"></span>
-                           <span className="toggle-label">Разрешить платежи за границей</span>
-                        </label>
-                     </div>
-                  </div>
-               </div>
+                           <Styled.CardToggleSwitch></Styled.CardToggleSwitch>
+                           <Styled.CardToggleLabel>
+                              Разрешить платежи за границей
+                           </Styled.CardToggleLabel>
+                        </Styled.CardToggleControl>
+                     </Styled.CardToggleOption>
+                  </Styled.CardSettingsGroup>
+               </Styled.CardSettings>
             </div>
          </div>
       </div>
