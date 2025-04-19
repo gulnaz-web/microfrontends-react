@@ -1,21 +1,9 @@
 import React, { useState } from 'react';
-import '../styles/cards-section/cards-section.css';
+import * as Styled from './styled/CardSection';
+import { cards } from '../mocks/cards';
 
 const CardSection: React.FC = () => {
    const [activeCardIndex, setActiveCardIndex] = useState(0);
-
-   const cards = [
-      {
-         number: '5789 **** **** 2847',
-         holder: 'Mike Smith',
-         validThru: '06/23',
-      },
-      {
-         number: '4568 **** **** 1234',
-         holder: 'Mike Smith',
-         validThru: '09/24',
-      },
-   ];
 
    return (
       <div className="card-section">
@@ -25,10 +13,10 @@ const CardSection: React.FC = () => {
          </div>
 
          <div className="card-container">
-            <div className="card-preview">
-               <div className="card-logo">cloudcash</div>
-               <div className="card-number">{cards[activeCardIndex].number}</div>
-               <div className="card-footer">
+            <Styled.CardPreview>
+               <Styled.CardLogo>cloudcash</Styled.CardLogo>
+               <Styled.CardNumber>{cards[activeCardIndex].number}</Styled.CardNumber>
+               <Styled.CardFooter>
                   <div className="card-holder">
                      <div className="label">Card holder</div>
                      <div>{cards[activeCardIndex].holder}</div>
@@ -37,39 +25,39 @@ const CardSection: React.FC = () => {
                      <div className="label">Valid thru</div>
                      <div>{cards[activeCardIndex].validThru}</div>
                   </div>
-               </div>
-            </div>
+               </Styled.CardFooter>
+            </Styled.CardPreview>
 
-            <div className="card-pagination">
+            <Styled.CardPagination>
                {cards.map((_, index) => (
-                  <div
+                  <Styled.PaginationDot
                      key={index}
-                     className={`pagination-dot ${index === activeCardIndex ? 'active' : ''}`}
-                     onClick={() => setActiveCardIndex(index)}></div>
+                     className={`${index === activeCardIndex ? 'active' : ''}`}
+                     onClick={() => setActiveCardIndex(index)}></Styled.PaginationDot>
                ))}
-            </div>
+            </Styled.CardPagination>
 
-            <div className="card-controls">
-               <div className="card-control-btn">Weekly payment limit: $350.60 / $4000</div>
-               <div className="card-control-btn">Deactivate card</div>
-            </div>
+            <Styled.CardControls>
+               <Styled.CardControlBtn>Weekly payment limit: $350.60 / $4000</Styled.CardControlBtn>
+               <Styled.CardControlBtn>Deactivate card</Styled.CardControlBtn>
+            </Styled.CardControls>
          </div>
 
-         <div className="balance-info">
-            <div className="balance-title">Current balance</div>
-            <div className="balance-amount">$ 2850.75</div>
+         <Styled.BalanceInfo>
+            <Styled.BalanceTitle>Current balance</Styled.BalanceTitle>
+            <Styled.BalanceAmount>$ 2850.75</Styled.BalanceAmount>
 
-            <div className="income-outcome">
-               <div className="income">
-                  <div className="balance-title">Income</div>
-                  <div className="income-amount">$ 1500.50</div>
-               </div>
-               <div className="outcome">
-                  <div className="balance-title">Outcome</div>
-                  <div className="outcome-amount">$ 350.60</div>
-               </div>
-            </div>
-         </div>
+            <Styled.IncomeOutcome>
+               <Styled.Income>
+                  <Styled.BalanceTitle>Income</Styled.BalanceTitle>
+                  <Styled.BalanceIncomeAmount>$ 1500.50</Styled.BalanceIncomeAmount>
+               </Styled.Income>
+               <Styled.Outcome>
+                  <Styled.BalanceTitle>Outcome</Styled.BalanceTitle>
+                  <Styled.BalanceOutcomeAmount>$ 350.60</Styled.BalanceOutcomeAmount>
+               </Styled.Outcome>
+            </Styled.IncomeOutcome>
+         </Styled.BalanceInfo>
       </div>
    );
 };

@@ -21,6 +21,15 @@ const GlobalStyles = createGlobalStyle`
     margin-top: 25px;
   }
 
+  #micro-dashboard-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  /* РАЗОБРАТЬ 👇 */
+
+
   @media (max-width: 768px) {
     .section-row {
       flex-direction: column;

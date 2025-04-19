@@ -8,7 +8,7 @@ import * as Styled from './styled/Dashboard';
 const Dashboard: React.FC = () => {
    return (
       <Styled.Dashboard>
-         <Styled.DashboardContainer>
+         <Styled.DashboardContainer id="micro-dashboard-container">
             <GoalsSection />
             <StatisticsSection />
             <TransactionsSection />

@@ -1,16 +1,18 @@
 import React from 'react';
-import '../styles/header/header.css';
+import * as Styled from './styled/Header';
 
 const Header: React.FC = () => {
    return (
-      <div className="header">
+      <Styled.HeaderContainer>
          <div>
-            <h1 className="page-title">Weekly sumup</h1>
-            <p className="page-subtitle">Get summary of your weekly online transactions here.</p>
+            <Styled.PageTitle>Weekly sumup</Styled.PageTitle>
+            <Styled.PageSubtitle>
+               Get summary of your weekly online transactions here.
+            </Styled.PageSubtitle>
          </div>
 
-         <div className="user-profile">
-            <div className="notification">
+         <Styled.UserProfile>
+            <Styled.Notification>
                <svg
                   width="24"
                   height="24"
@@ -22,15 +24,15 @@ const Header: React.FC = () => {
                      fill="currentColor"
                   />
                </svg>
-               <div className="notification-badge"></div>
-            </div>
+               <Styled.NotificationBadge />
+            </Styled.Notification>
 
-            <div className="account-info">
-               <div className="account-name">Andrew</div>
-               <div className="account-type">Admin account</div>
-            </div>
+            <Styled.AccountInfo>
+               <Styled.AccountName>Andrew</Styled.AccountName>
+               <Styled.AccountType>Admin account</Styled.AccountType>
+            </Styled.AccountInfo>
 
-            <div className="user-avatar">
+            <Styled.UserAvatar>
                <svg
                   width="24"
                   height="24"
@@ -42,9 +44,9 @@ const Header: React.FC = () => {
                      fill="#FFB930"
                   />
                </svg>
-            </div>
-         </div>
-      </div>
+            </Styled.UserAvatar>
+         </Styled.UserProfile>
+      </Styled.HeaderContainer>
    );
 };
 

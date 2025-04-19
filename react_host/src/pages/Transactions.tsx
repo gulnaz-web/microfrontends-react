@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/transactions/transactions.css';
+import * as Styled from './styled/Transactions';
 
 const Transactions: React.FC = () => {
    return (
@@ -9,33 +9,33 @@ const Transactions: React.FC = () => {
             <button className="btn btn-secondary">Экспорт CSV</button>
          </div>
 
-         <div className="transactions-table">
-            <div className="transaction-filters">
-               <div className="filter-group">
+         <Styled.Transaction>
+            <Styled.TransactionFilters>
+               <Styled.FilterGroup>
                   <label>Фильтр по периоду:</label>
-                  <select className="transaction-filter">
+                  <Styled.TransactionFilter>
                      <option>За последний месяц</option>
                      <option>За 3 месяца</option>
                      <option>За 6 месяцев</option>
                      <option>За год</option>
-                  </select>
-               </div>
-               <div className="filter-group">
+                  </Styled.TransactionFilter>
+               </Styled.FilterGroup>
+               <Styled.FilterGroup>
                   <label>Тип транзакции:</label>
-                  <select className="transaction-filter">
+                  <Styled.TransactionFilter>
                      <option>Все</option>
                      <option>Доходы</option>
                      <option>Расходы</option>
-                  </select>
-               </div>
-               <div className="filter-group">
+                  </Styled.TransactionFilter>
+               </Styled.FilterGroup>
+               <Styled.FilterGroup>
                   <label>Поиск:</label>
-                  <input type="text" className="search-input" placeholder="Поиск транзакций..." />
-               </div>
-            </div>
+                  <Styled.SearchInput type="text" placeholder="Поиск транзакций..." />
+               </Styled.FilterGroup>
+            </Styled.TransactionFilters>
 
             <div className="transaction-listing">
-               <table className="transactions-table">
+               <Styled.TransactionsTable>
                   <thead>
                      <tr>
                         <th>Дата</th>
@@ -55,9 +55,13 @@ const Transactions: React.FC = () => {
                               <td>Tesco Market {index}</td>
                               <td>Продукты</td>
                               <td>
-                                 <span className="status-completed">Завершено</span>
+                                 <Styled.TransactionStatus>Завершено</Styled.TransactionStatus>
                               </td>
-                              <td className="amount-expense">-₽{(index + 1) * 250}</td>
+                              <td>
+                                 <Styled.TransactionAmount>
+                                    -₽{(index + 1) * 250}
+                                 </Styled.TransactionAmount>
+                              </td>
                               <td>
                                  <button className="action-btn">
                                     <svg
@@ -76,7 +80,7 @@ const Transactions: React.FC = () => {
                            </tr>
                         ))}
                   </tbody>
-               </table>
+               </Styled.TransactionsTable>
             </div>
 
             <div className="pagination">
@@ -90,7 +94,7 @@ const Transactions: React.FC = () => {
                </div>
                <button className="pagination-btn">Вперед</button>
             </div>
-         </div>
+         </Styled.Transaction>
       </div>
    );
 };
