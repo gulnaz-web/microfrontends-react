@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import '../styles/sidebar/sidebar.css';
+import { useLocation } from 'react-router-dom';
+import * as Styled from './styled/Sidebar';
 
 const Sidebar: React.FC = () => {
    const location = useLocation();
    const path = location.pathname;
 
    return (
-      <div className="sidebar">
-         <div className="logo">
+      <Styled.SidebarContainer>
+         <Styled.Logo>
             <svg
                width="24"
                height="24"
@@ -25,9 +25,9 @@ const Sidebar: React.FC = () => {
                />
             </svg>
             <span>cloudcash</span>
-         </div>
+         </Styled.Logo>
 
-         <Link to="/" className={`nav-item ${path === '/' ? 'active' : ''}`}>
+         <Styled.NavItem to="/" className={`${path === '/' ? 'active' : ''}`}>
             <svg
                width="24"
                height="24"
@@ -40,11 +40,11 @@ const Sidebar: React.FC = () => {
                />
             </svg>
             <span>Overview</span>
-         </Link>
+         </Styled.NavItem>
 
-         <Link
+         <Styled.NavItem
             to="/transactions"
-            className={`nav-item ${path === '/transactions' ? 'active' : ''}`}>
+            className={`${path === '/transactions' ? 'active' : ''}`}>
             <svg
                width="24"
                height="24"
@@ -57,9 +57,9 @@ const Sidebar: React.FC = () => {
                />
             </svg>
             <span>Transactions</span>
-         </Link>
+         </Styled.NavItem>
 
-         <Link to="/cards" className={`nav-item ${path === '/cards' ? 'active' : ''}`}>
+         <Styled.NavItem to="/cards" className={`${path === '/cards' ? 'active' : ''}`}>
             <svg
                width="24"
                height="24"
@@ -72,9 +72,9 @@ const Sidebar: React.FC = () => {
                />
             </svg>
             <span>Cards</span>
-         </Link>
+         </Styled.NavItem>
 
-         <Link to="/invoices" className={`nav-item ${path === '/invoices' ? 'active' : ''}`}>
+         <Styled.NavItem to="/invoices" className={`${path === '/invoices' ? 'active' : ''}`}>
             <svg
                width="24"
                height="24"
@@ -90,9 +90,9 @@ const Sidebar: React.FC = () => {
                <path d="M15 9H17V17H15V9Z" fill="currentColor" />
             </svg>
             <span>Invoices</span>
-         </Link>
+         </Styled.NavItem>
 
-         <Link to="/goals" className={`nav-item ${path === '/goals' ? 'active' : ''}`}>
+         <Styled.NavItem to="/goals" className={`${path === '/goals' ? 'active' : ''}`}>
             <svg
                width="24"
                height="24"
@@ -103,11 +103,11 @@ const Sidebar: React.FC = () => {
                <path d="M2 11V22H22V11L12 18L2 11Z" fill="currentColor" />
             </svg>
             <span>Goals</span>
-         </Link>
+         </Styled.NavItem>
 
-         <Link
+         <Styled.NavItem
             to="/settings"
-            className={`nav-item ${path === '/settings' ? 'active' : ''}`}
+            className={`${path === '/settings' ? 'active' : ''}`}
             style={{ marginTop: 'auto' }}>
             <svg
                width="24"
@@ -121,8 +121,8 @@ const Sidebar: React.FC = () => {
                />
             </svg>
             <span>Settings</span>
-         </Link>
-      </div>
+         </Styled.NavItem>
+      </Styled.SidebarContainer>
    );
 };
 

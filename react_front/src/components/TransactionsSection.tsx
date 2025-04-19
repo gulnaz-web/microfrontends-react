@@ -1,130 +1,30 @@
 import React from 'react';
-import '../styles/transactions-section/transactions-section.css';
+import * as Styled from './styled/TransactionsSection';
+import { transactions } from '../mocks/transactions';
 
 const TransactionsSection: React.FC = () => {
-   const transactions = [
-      {
-         id: 1,
-         recipient: 'Tesco Market',
-         type: 'Shopping',
-         date: '13 Dec 2020',
-         amount: '$75.67',
-         icon: (
-            <svg
-               width="24"
-               height="24"
-               viewBox="0 0 24 24"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-               <path
-                  d="M7 18C8.1 18 9 18.9 9 20C9 21.1 8.1 22 7 22C5.9 22 5 21.1 5 20C5 18.9 5.9 18 7 18ZM17 18C18.1 18 19 18.9 19 20C19 21.1 18.1 22 17 22C15.9 22 15 21.1 15 20C15 18.9 15.9 18 17 18ZM7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L21.16 4.96L19.42 4H19.41L18.31 6L15.55 11H8.53L8.4 10.73L6.16 6L5.21 4L4.27 2H1V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.29 15 7.17 14.89 7.17 14.75Z"
-                  fill="#ff9f1c"
-               />
-            </svg>
-         ),
-      },
-      {
-         id: 2,
-         recipient: 'ElectroMen Market',
-         type: 'Shopping',
-         date: '14 Dec 2020',
-         amount: '$250.00',
-         icon: (
-            <svg
-               width="24"
-               height="24"
-               viewBox="0 0 24 24"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-               <path
-                  d="M7 18C8.1 18 9 18.9 9 20C9 21.1 8.1 22 7 22C5.9 22 5 21.1 5 20C5 18.9 5.9 18 7 18ZM17 18C18.1 18 19 18.9 19 20C19 21.1 18.1 22 17 22C15.9 22 15 21.1 15 20C15 18.9 15.9 18 17 18ZM7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L21.16 4.96L19.42 4H19.41L18.31 6L15.55 11H8.53L8.4 10.73L6.16 6L5.21 4L4.27 2H1V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.29 15 7.17 14.89 7.17 14.75Z"
-                  fill="#ff9f1c"
-               />
-            </svg>
-         ),
-      },
-      {
-         id: 3,
-         recipient: 'Fiorgio Restaurant',
-         type: 'Food',
-         date: '07 Dec 2020',
-         amount: '$19.50',
-         icon: (
-            <svg
-               width="24"
-               height="24"
-               viewBox="0 0 24 24"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-               <path
-                  d="M16 6V14H19V22H21V2C18.24 2 16 4.24 16 6ZM11 9H9V2H7V9H5V2H3V9C3 11.21 4.79 13 7 13V22H9V13C11.21 13 13 11.21 13 9V2H11V9Z"
-                  fill="#e63946"
-               />
-            </svg>
-         ),
-      },
-      {
-         id: 4,
-         recipient: 'John Matthew Kayne',
-         type: 'Sport',
-         date: '06 Dec 2020',
-         amount: '$350',
-         icon: (
-            <svg
-               width="24"
-               height="24"
-               viewBox="0 0 24 24"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-               <path
-                  d="M13.49 5.48C14.59 5.48 15.49 4.58 15.49 3.48C15.49 2.38 14.59 1.48 13.49 1.48C12.39 1.48 11.49 2.38 11.49 3.48C11.49 4.58 12.39 5.48 13.49 5.48ZM9.89 19.38L10.89 14.98L12.99 16.98V22.98H14.99V15.48L12.89 13.48L13.49 9.98C14.79 11.98 16.79 13.48 19.29 13.48V11.48C17.09 11.48 15.39 10.08 14.69 8.18L13.69 5.98C13.29 4.98 12.29 4.28 11.19 4.28C10.79 4.28 10.49 4.38 10.19 4.48L3.50005 7.28V11.48H5.50005V8.58L8.30005 7.48L6.90005 14.98L1.54005 17.98L2.54005 19.98L9.89 19.38Z"
-                  fill="#3a86ff"
-               />
-            </svg>
-         ),
-      },
-      {
-         id: 5,
-         recipient: 'Ann Marlin',
-         type: 'Shopping',
-         date: '31 Nov 2020',
-         amount: '$430',
-         icon: (
-            <svg
-               width="24"
-               height="24"
-               viewBox="0 0 24 24"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-               <path
-                  d="M7 18C8.1 18 9 18.9 9 20C9 21.1 8.1 22 7 22C5.9 22 5 21.1 5 20C5 18.9 5.9 18 7 18ZM17 18C18.1 18 19 18.9 19 20C19 21.1 18.1 22 17 22C15.9 22 15 21.1 15 20C15 18.9 15.9 18 17 18ZM7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L21.16 4.96L19.42 4H19.41L18.31 6L15.55 11H8.53L8.4 10.73L6.16 6L5.21 4L4.27 2H1V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.29 15 7.17 14.89 7.17 14.75Z"
-                  fill="#ff9f1c"
-               />
-            </svg>
-         ),
-      },
-   ];
-
    return (
-      <div className="transactions-section">
+      <Styled.TransactionsSection>
          <div className="section-header">
             <h2 className="section-title">Transaction history</h2>
          </div>
 
          <div className="transactions-list">
             {transactions.map((transaction) => (
-               <div key={transaction.id} className="transaction-item">
-                  <div className="transaction-icon">{transaction.icon}</div>
-                  <div className="transaction-content">
-                     <div className="transaction-recipient">{transaction.recipient}</div>
-                     <div className="transaction-type">{transaction.type}</div>
-                  </div>
-                  <div className="transaction-date">{transaction.date}</div>
-                  <div className="transaction-amount">{transaction.amount}</div>
-               </div>
+               <Styled.TransactionItem key={transaction.id}>
+                  <Styled.TransactionIcon>{transaction.icon}</Styled.TransactionIcon>
+                  <Styled.TransactionContent>
+                     <Styled.TransactionRecipient>
+                        {transaction.recipient}
+                     </Styled.TransactionRecipient>
+                     <Styled.TransactionType>{transaction.type}</Styled.TransactionType>
+                  </Styled.TransactionContent>
+                  <Styled.TransactionDate>{transaction.date}</Styled.TransactionDate>
+                  <Styled.TransactionAmount>{transaction.amount}</Styled.TransactionAmount>
+               </Styled.TransactionItem>
             ))}
          </div>
-      </div>
+      </Styled.TransactionsSection>
    );
 };
 

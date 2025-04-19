@@ -3,19 +3,19 @@ import GoalsSection from '../components/GoalsSection';
 import StatisticsSection from '../components/StatisticsSection';
 import TransactionsSection from '../components/TransactionsSection';
 import NewTransactionSection from '../components/NewTransactionSection';
-import '../styles/dashboard/dashboard.css';
+import * as Styled from './styled/Dashboard';
 
 const Dashboard: React.FC = () => {
    return (
-      <div className="micro-frontend-container">
-         <div className="section-row">
+      <Styled.Dashboard>
+         <Styled.DashboardContainer>
             <GoalsSection />
             <StatisticsSection />
             <TransactionsSection />
-         </div>
+         </Styled.DashboardContainer>
 
          <NewTransactionSection />
-      </div>
+      </Styled.Dashboard>
    );
 };
 

@@ -81,3 +81,24 @@
 .card-control-btn:hover {
    background-color: var(--background-color);
 }
+
+.card-pagination {
+   display: flex;
+   justify-content: center;
+   margin-top: 15px;
+}
+
+.pagination-dot {
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background-color: var(--border-color);
+   margin: 0 5px;
+   cursor: pointer;
+}
+
+.pagination-dot.active {
+   background-color: var(--primary-color);
+   width: 20px;
+   border-radius: 4px;
+}
