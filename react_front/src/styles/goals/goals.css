@@ -1,0 +1,41 @@
+/* Стили для целей */
+.goals-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+   gap: 20px;
+}
+
+.goal-card {
+   text-align: center;
+   padding: 15px;
+   border-radius: var(--border-radius);
+   background-color: var(--background-color);
+   transition: all 0.2s;
+}
+
+.goal-card:hover {
+   transform: translateY(-5px);
+   box-shadow: var(--shadow);
+}
+
+.goal-icon {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   background-color: rgba(58, 134, 255, 0.1);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto 10px;
+}
+
+.goal-amount {
+   font-size: 1.2rem;
+   font-weight: 600;
+   margin-bottom: 5px;
+}
+
+.goal-date {
+   font-size: 0.8rem;
+   color: var(--text-secondary);
+}

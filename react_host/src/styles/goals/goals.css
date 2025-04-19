@@ -1,0 +1,86 @@
+/* Стили для целей */
+.micro-frontend-goals {
+   margin-bottom: 25px;
+}
+
+.goals-summary {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   gap: 15px;
+   margin-bottom: 20px;
+}
+
+.summary-card {
+   background-color: var(--background-color);
+   padding: 15px;
+   border-radius: var(--border-radius);
+   text-align: center;
+}
+
+.summary-card h3 {
+   font-size: 0.9rem;
+   color: var(--text-secondary);
+   margin-bottom: 10px;
+}
+
+.summary-value {
+   font-size: 1.5rem;
+   font-weight: 600;
+   color: var(--primary-color);
+}
+
+.savings-calculator {
+   display: flex;
+   gap: 30px;
+}
+
+.calculator-form {
+   flex: 1;
+}
+
+.range-value {
+   margin-top: 8px;
+   font-size: 0.9rem;
+   color: var(--text-secondary);
+}
+
+.calculated-value {
+   font-size: 1.5rem;
+   font-weight: 600;
+   color: var(--primary-color);
+}
+
+.calculator-tips {
+   flex: 1;
+}
+
+.calculator-tips h3 {
+   margin-bottom: 15px;
+   font-size: 1.1rem;
+}
+
+.tips-list {
+   padding-left: 20px;
+}
+
+.tips-list li {
+   margin-bottom: 10px;
+   color: var(--text-secondary);
+}
+
+.form-group {
+   margin-bottom: 20px;
+}
+
+.form-group label {
+   display: block;
+   margin-bottom: 8px;
+   font-size: 0.9rem;
+}
+
+.form-control {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid var(--border-color);
+   border-radius: var(--border-radius);
+}

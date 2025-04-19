@@ -1,0 +1,106 @@
+/* Стили для вкладок и управления картами */
+.card-management-tabs {
+   display: flex;
+   border-bottom: 1px solid var(--border-color);
+   margin-bottom: 20px;
+}
+
+.card-tab {
+   padding: 10px 20px;
+   background: none;
+   border: none;
+   border-bottom: 2px solid transparent;
+   cursor: pointer;
+   font-weight: 500;
+   color: var(--text-secondary);
+}
+
+.card-tab.active {
+   color: var(--primary-color);
+   border-bottom-color: var(--primary-color);
+}
+
+.settings-group {
+   margin-bottom: 30px;
+}
+
+.settings-group h3 {
+   font-size: 1.1rem;
+   margin-bottom: 15px;
+}
+
+.settings-item {
+   margin-bottom: 15px;
+}
+
+.settings-item label {
+   display: block;
+   margin-bottom: 8px;
+   font-size: 0.9rem;
+}
+
+.setting-control {
+   display: flex;
+   align-items: center;
+}
+
+.setting-control input[type='range'] {
+   flex: 1;
+   margin-right: 15px;
+}
+
+.setting-control span {
+   font-weight: 500;
+   min-width: 80px;
+   text-align: right;
+}
+
+.settings-option {
+   margin-bottom: 15px;
+}
+
+.toggle-control {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+}
+
+.toggle-switch {
+   position: relative;
+   display: inline-block;
+   width: 40px;
+   height: 20px;
+   background-color: var(--border-color);
+   border-radius: 20px;
+   margin-right: 10px;
+}
+
+.toggle-control input {
+   opacity: 0;
+   width: 0;
+   height: 0;
+}
+
+.toggle-control input:checked + .toggle-switch {
+   background-color: var(--primary-color);
+}
+
+.toggle-switch:before {
+   position: absolute;
+   content: '';
+   height: 16px;
+   width: 16px;
+   left: 2px;
+   bottom: 2px;
+   background-color: white;
+   border-radius: 50%;
+   transition: 0.3s;
+}
+
+.toggle-control input:checked + .toggle-switch:before {
+   transform: translateX(20px);
+}
+
+.toggle-label {
+   font-size: 0.9rem;
+}

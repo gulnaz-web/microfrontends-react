@@ -1,0 +1,61 @@
+:root {
+   --primary-color: #3a86ff;
+   --secondary-color: #8338ec;
+   --background-color: #f8f9fa;
+   --card-background: #ffffff;
+   --text-color: #2b2d42;
+   --text-secondary: #8d99ae;
+   --border-color: #e9ecef;
+   --success-color: #38b000;
+   --warning-color: #ff9f1c;
+   --danger-color: #e63946;
+   --border-radius: 10px;
+   --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+      Cantarell, sans-serif;
+}
+
+/* Микрофронтенд стили */
+.micro-frontend-container {
+   font-family: var(--font-family);
+}
+
+/* Wrapper for sections */
+.goals-section,
+.statistics-section,
+.transactions-section {
+   background-color: var(--card-background);
+   border-radius: var(--border-radius);
+   box-shadow: var(--shadow);
+   padding: 20px;
+   flex: 1;
+}
+
+@media (max-width: 992px) {
+   .goals-section,
+   .statistics-section,
+   .transactions-section {
+      flex: 0 0 calc(50% - 10px);
+   }
+}
+
+@media (max-width: 768px) {
+   .goals-section,
+   .statistics-section,
+   .transactions-section {
+      flex: 0 0 100%;
+   }
+}
+
+/* header */
+.section-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+.section-title {
+   font-size: 1.2rem;
+   font-weight: 600;
+}

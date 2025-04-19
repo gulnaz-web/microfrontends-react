@@ -1,0 +1,62 @@
+/* Стили для sidebar */
+.sidebar {
+   width: 200px;
+   height: 100vh;
+   background-color: var(--card-background);
+   box-shadow: var(--shadow);
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   position: fixed;
+   left: 0;
+   top: 0;
+}
+
+.sidebar .logo {
+   color: var(--primary-color);
+   font-size: 1.5rem;
+   font-weight: bold;
+   margin-bottom: 30px;
+   display: flex;
+   align-items: center;
+}
+
+.sidebar .logo svg {
+   flex: 0 0 auto;
+   margin-right: 10px;
+}
+
+.nav-item {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   margin-bottom: 10px;
+   border-radius: var(--border-radius);
+   color: var(--text-secondary);
+   transition: all 0.2s ease;
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.nav-item.active,
+.nav-item:hover {
+   background-color: rgba(58, 134, 255, 0.1);
+   color: var(--primary-color);
+}
+
+.nav-item svg {
+   flex: 0 0 auto;
+   margin-right: 10px;
+}
+
+@media (max-width: 992px) {
+   .sidebar {
+      width: 60px;
+      padding: 15px 10px;
+   }
+
+   .sidebar .logo span,
+   .nav-item span {
+      display: none;
+   }
+}
