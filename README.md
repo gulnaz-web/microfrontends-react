@@ -7,12 +7,12 @@
 ```
 microfrontends/
 ├── react_host/              # Хост-приложение
-│   ├── src/                 # Исходный код
-│   │   ├── components/      # UI компоненты
+│   ├── src/                 
+│   │   ├── components/      
 │   │   │   ├── Sidebar.tsx  # Боковое навигационное меню с React Router
 │   │   │   ├── Header.tsx   # Заголовок с профилем пользователя
 │   │   │   └── CardSection.tsx  # Отображение карт и баланса
-│   │   ├── pages/           # Страницы приложения
+│   │   ├── pages/          
 │   │   │   ├── Overview.tsx     # Главная страница
 │   │   │   ├── Transactions.tsx # Страница транзакций
 │   │   │   ├── Cards.tsx        # Страница управления картами
@@ -22,34 +22,24 @@ microfrontends/
 │   │   ├── moduleFederation/  # Интеграция с микрофронтендом
 │   │   │   ├── modules.tsx  # Загрузка удаленных модулей
 │   │   │   └── ErrorBoundary.tsx  # Обработка ошибок при загрузке микрофронтендов
-│   │   ├── App.tsx          # Главный компонент приложения с BrowserRouter
-│   │   ├── AppRoutes.tsx    # Компонент маршрутизации
-│   │   ├── bootstrap.tsx    # Точка инициализации приложения
-│   │   └── index.tsx        # Точка входа
-│   ├── public/              # Публичные файлы
-│   │   └── index.html       # Базовый HTML-файл
-│   └── package.json         # Зависимости и скрипты
+│   │   ├── App.tsx
+│   │   └── bootstrap.tsx    # Точка инициализации приложения
 │
 ├── react_front/             # Микрофронтенд
-│   ├── src/                 # Исходный код
-│   │   ├── components/      # UI компоненты
+│   ├── src/
+│   │   ├── components/
 │   │   │   ├── GoalsSection.tsx       # Секция целей
 │   │   │   ├── StatisticsSection.tsx  # Статистика расходов
 │   │   │   ├── TransactionsSection.tsx # История транзакций
 │   │   │   └── NewTransactionSection.tsx # Форма для новой транзакции
-│   │   ├── pages/           # Страницы микрофронтенда
+│   │   ├── pages/
 │   │   │   ├── Dashboard.tsx          # Объединяет все секции
 │   │   │   ├── FinancialGoals.tsx     # Страница целей
 │   │   │   ├── Statistics.tsx         # Страница статистики
 │   │   │   ├── TransactionHistory.tsx # Страница истории транзакций
 │   │   │   └── NewTransaction.tsx     # Страница новой транзакции
-│   │   ├── App.tsx          # Главный компонент микрофронтенда с BrowserRouter
-│   │   ├── AppRoutes.tsx    # Компонент маршрутизации микрофронтенда
-│   │   ├── bootstrap.tsx    # Инициализация и экспорт функции mount
-│   │   └── index.tsx        # Точка входа с динамическим импортом
-│   ├── public/              # Публичные файлы
-│   │   └── index.html       # Базовый HTML-файл
-│   └── package.json         # Зависимости и скрипты
+│   │   ├── App.tsx
+│   │   └── bootstrap.tsx    # Инициализация и экспорт функции mount
 ```
 
 ## Разделение ответственности
